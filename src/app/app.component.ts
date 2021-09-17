@@ -9,7 +9,7 @@ import { MarvelService } from './services/marvel.service';
 export class AppComponent {
   title = 'marvelApp';
 
-  public listHeroes = [];
+  public listHeroes: Array<any> = [];
   public offset = '0';
   public limit = '100';
 
