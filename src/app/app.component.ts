@@ -4,25 +4,21 @@ import { MarvelService } from './services/marvel.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'marvelApp';
 
-  public listHeroes: Array<any> = [];
-  public offset = '0';
-  public limit = '100';
+  public comics: Array<any> = [];
+  public offset: any = '0';
+  public limit: any = '100';
 
-  constructor(
-    private heroeS: MarvelService
-) {}
+  constructor(private comic: MarvelService) {}
 
   ngOnInit(): void {
-    
-    this.heroeS.consultarPersonajesMarvel(this.offset, this.limit).subscribe(res => {
-      console.log('Respuesta heroes', res);
-      this.listHeroes = res.data.results;
-    })
+    this.comic.getComics(this.offset, this.limit).subscribe((res) => {
+      console.log('Respuesta', res);
+      this.comics = res.data.results;
+    });
   }
-
 }

@@ -1,13 +1,35 @@
-<div class="container" style="background-color: antiquewhite;">
-  <h1 class="mt-3 text-center animate__animated animate__bounce slower" style="color: maroon; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><strong>Marvel Comics Avengers Universe </strong></h1>
-  <h2 class="mt-3 text-center animate__animated animate__bounce slower" style="color: darkslategray; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><strong>Avengers Universe </strong></h2>
+<div class="container" style="background-color: antiquewhite">
+  <h1
+    class="mt-3 text-center animate__animated animate__bounce slower"
+    style="
+      color: maroon;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    "
+  >
+    <strong>Marvel Comics Avengers Universe </strong>
+  </h1>
+  <h2
+    class="mt-3 text-center animate__animated animate__bounce slower"
+    style="
+      color: darkslategray;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    "
+  >
+    <strong>Avengers Universe </strong>
+  </h2>
   <div class="row row-cols-1 row-cols-md-4 g-4 mt-3">
-    <div class="col" *ngFor="let heroes of listHeroes">
+    <div class="col" *ngFor="let comic of comics">
       <div class="card animate__bounceIn">
-        <img src="{{ heroes.thumbnail.path }}.{{ heroes.thumbnail.extension }}" class="card-img-top img-fluid" style="height: 300px;">
+        <img
+          src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+          class="card-img-top img-fluid"
+          style="height: 300px"
+        />
         <div class="card-body">
-          <h5 class="card-title">{{ heroes.name }}</h5>
-          <p class="card-text">{{ heroes.description }}</p>
+          <h5 class="card-title">{{ comic.name }}</h5>
+          <p class="card-text">{{ comic.description }}</p>
         </div>
       </div>
     </div>
